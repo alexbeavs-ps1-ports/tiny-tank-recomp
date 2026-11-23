@@ -1,0 +1,98 @@
+{
+  "format_version": 1,
+  "id": "tiny-tank-psx",
+  "name": "Tiny Tank",
+  "kind": "recomp",
+  "platform": "psx",
+  "source_repo": "tiny-tank-recomp",
+  "rom_identity": {
+    "crc32": [
+      "e18495ce"
+    ],
+    "md5": [
+      "38f0cfb4869cb5892411c0f70ef6c57e"
+    ],
+    "sha1": [
+      "132a62d1d9f34913189823fc63b2e5ee93313c1c"
+    ],
+    "disc_serials": [
+      "SCES-01338"
+    ],
+    "sizes": [
+      713919024
+    ],
+    "filenames": [
+      "Tiny Tank (Europe).cue",
+      "Tiny Tank (Europe) (Track 1).bin"
+    ],
+    "track_counts": [
+      2
+    ],
+    "disc_fps": [
+      "0644d7c708f5856ef64896c57ea83213cc9bc7b3420ed384ceb3a7cfad428b4e"
+    ],
+    "require_cue": true
+  },
+  "rom_extensions": [
+    ".cue",
+    ".bin",
+    ".chd"
+  ],
+  "bios_identity": {
+    "required": true,
+    "name": "SCPH5552.BIN",
+    "profile": "SCPH5552",
+    "crc32": [
+      "d786f0b9"
+    ],
+    "md5": [
+      "32736f17079d0b2b7024407c39bd3050"
+    ],
+    "sha1": [
+      "f6bc2d1f5eb6593de7d089c425ac681d6fffd3f0"
+    ],
+    "sha256": [
+      "1faaa18fa820a0225e488d9f086296b8e6c46df739666093987ff7d8fd352c09"
+    ],
+    "sizes": [
+      524288
+    ],
+    "filenames": [
+      "SCPH5552.BIN"
+    ]
+  },
+  "release": {
+    "github": "alexbeavs-ps1-ports/tiny-tank-recomp",
+    "allow_prerelease": false,
+    "asset_glob": {
+      "windows-x64": "tiny-tank-*-windows-x64.zip",
+      "linux-x64": "tiny-tank-*-linux-x64.zip",
+      "macos-arm64": "tiny-tank-*-macos-arm64.zip",
+      "macos-x64": "tiny-tank-*-macos-x64.zip"
+    }
+  },
+  "launch": {
+    "windows": "tiny_tank.exe",
+    "linux": "tiny_tank",
+    "macos": "tiny_tank"
+  },
+  "build": {
+    "source": {
+      "github": "alexbeavs-ps1-ports/tiny-tank-recomp",
+      "ref": ""
+    },
+    "toolchain": {
+      "id": "cmake-clang-v1",
+      "min_version": "1.0.14"
+    },
+    "generate": {
+      "engine": "psxrecomp",
+      "config": "game.toml"
+    },
+    "cmake": {
+      "build_dir": "build",
+      "target": "psx-runtime",
+      "config": "Release"
+    }
+  }
+}
